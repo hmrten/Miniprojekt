@@ -921,8 +921,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Skiljetecken.cshtml" />
-    <Content Include="Views\GissaFarg.cshtml" />
+    <Content Include="Views\Color\GissaFarg.cshtml" />
     <Content Include="Views\GameImage\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -934,7 +933,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Color\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603091218032_initial.resx">

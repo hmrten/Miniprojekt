@@ -9,6 +9,10 @@ namespace Miniprojekt.DataAccess
     public class ColorController : Controller
     {
         // GET: Color
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult GissaFarg()
         {
             return View();
