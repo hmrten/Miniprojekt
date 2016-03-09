@@ -894,7 +894,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DataAccess\ColorController.cs" />
+    <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="DataAccess\MpContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -925,7 +925,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Views\Color\" />
   </ItemGroup>
   <ItemGroup>
