@@ -1,9 +1,10 @@
 namespace Miniprojekt.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+	using Miniprojekt.Models;
+	using System;
+	using System.Data.Entity;
+	using System.Data.Entity.Migrations;
+	using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Miniprojekt.DataAccess.MpContext>
     {
@@ -26,6 +27,19 @@ namespace Miniprojekt.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+			context.Games.AddOrUpdate(
+				g => g.id,
+				new []	{
+							new Game { id = 1, name = "Gissa bilden" },
+							new Game { id = 2, name = "Skiljetecken" },
+							new Game { id = 3, name = "Vilken färg?" },
+							new Game { id = 4, name = "Bygga meningar av ord" },
+							new Game { id = 5, name = "15 blandade frågor" },
+							new Game { id = 6, name = "5 frågor ur kategori" }
+						}
+				);
+			context.SaveChanges();
+
         }
     }
 }
