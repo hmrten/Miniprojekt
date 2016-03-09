@@ -928,8 +928,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Skiljetecken.cshtml" />
-    <Content Include="Views\GissaFarg.cshtml" />
+    <Content Include="Views\Color\GissaFarg.cshtml" />
     <Content Include="Views\GameImage\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
