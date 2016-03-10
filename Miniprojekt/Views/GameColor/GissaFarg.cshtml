@@ -2,101 +2,96 @@
 @{
     ViewBag.Title = "GissaFarg";
 }
+@section scripts{<script src="~/Scripts/GameColorAngular.js"></script>}
 
-<head>
-    <meta charset="UTF-8">
+<div>
+   
     <style>
-        .button0 
-        {
-    background-color:  #00ff33;
-    border: none;
-    color: #00ff33;
-    padding: 32px 64px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 28px;
-	width: 150px;
-}
-        .button1 
-        {
-    background-color:  #ff0000;
-    border: none;
-    color: #ff0000;
-    padding: 32px 64px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 28px;
-	width: 150px;
-}        .button2 
-         {
-    background-color:  #0026ff;
-    border: none;
-    color: #0026ff;
-    padding: 32px 64px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 28px;
-	width: 150px;
+        .button0 {
+            background-color: #00ff33;
+            border: none;
+            color: #00ff33;
+            padding: 32px 64px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 28px;
+            width: 150px;
+        }
 
-}        .button3 
-         {
-    background-color:  #ffd800;
-    border: none;
-    color: #ffd800;
-    padding: 32px 64px;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 28px;
-	width: 150px;
-    vertical-align : middle;
-}
- button.button0:hover 
-	{
-		/*background-color: #ccc;*/
-        color: white;
-	}
-  button.button1:hover 
-	{
-		/*background-color: #ccc;*/
-        color: white;
-	}
-   button.button2:hover 
-	{
-		/*background-color: #ccc;*/
-        color: white;
-	}
-    button.button3:hover 
-	{
-		/*background-color: #ccc;*/
-        color: white;
-	}
+        .button1 {
+            background-color: #ff0000;
+            border: none;
+            color: #ff0000;
+            padding: 32px 64px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 28px;
+            width: 150px;
+        }
+
+        .button2 {
+            background-color: #0026ff;
+            border: none;
+            color: #0026ff;
+            padding: 32px 64px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 28px;
+            width: 150px;
+        }
+
+        .button3 {
+            background-color: #ffd800;
+            border: none;
+            color: #ffd800;
+            padding: 32px 64px;
+            text-align: left;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 28px;
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        button.button0:hover {
+            /*background-color: #ccc;*/
+            color: white;
+        }
+
+        button.button1:hover {
+            /*background-color: #ccc;*/
+            color: white;
+        }
+
+        button.button2:hover {
+            /*background-color: #ccc;*/
+            color: white;
+        }
+
+        button.button3:hover {
+            /*background-color: #ccc;*/
+            color: white;
+        }
     </style>
+</div>
 
-    <title>Gissa Färg</title>
-
-</head>
-<center>
-<h2>Gul</h2>
+<div ng-app="Myapp" ng-controller="MyController">
+    {{count}}
+    <center>
+        <h2>Gul</h2>
     </center>
-<body>
     <div class="bodytable">
         <center>
-            <form>
+            @using (Html.BeginForm())
+            {
                 <table>
-
                     <tr>
-                        
-                            <th>
-
-                                <button type="button" class="button0" name="green">Grön</button>
-
-
-                            </th>
-                       
+                        <th>
+                            <button type="button" class="button0" name="name">Grön</button>
+                        </th>
                         <th>
                             <button type="button" class="button1" name="red">Röd</button>
                         </th>
@@ -106,12 +101,11 @@
                             <button type="button" class="button2" name="blue">Blå</button>
                         </th>
                         <th>
-                            <button type="button" class="button3" name="yellow">Gul</button>
+                            <button type="button" class="button3" name="yellow" ng-click="count = count + 1">Gul</button>
                         </th>
                     </tr>
-
                 </table>
-            </form>
+            }
         </center>
     </div>
-</body>
+</div>
