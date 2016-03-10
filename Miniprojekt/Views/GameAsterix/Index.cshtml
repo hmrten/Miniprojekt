@@ -4,5 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section scripts {
+    <script src="~/App/Asterix/IndexController.js"></script>
+}
 
+<h2>Asterixspelet</h2>
+<h4>Skriv av texten och sätt in rätt skiljetecken där en asterisk (*) finns markerad.</h4>
+
+<div class="row" data-ng-app="asterix">
+    <div class="col-sm-12" data-ng-controller="IndexController">
+        <div class="alert alert-info">
+            <p data-ng-bind-html="dispText"></p>
+        </div>
+
+        <div class="alert alert-warning">
+            <p data-ng-bind-html="str"></p>
+        </div>
+
+        <strong>{{ msg }}</strong>
+
+        <p>{{ puncts }}</p>
+
+        <ul>
+            <li data-ng-repeat="p in puncts">{{ p }}</li>
+        </ul>
+
+        <form data-ng-submit="play()">
+            <div class="form-group">
+                <textarea class="form-control" name="inputText" style="min-width: 500px" data-ng-model="inputText"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Rätta</button>
+        </form>
+    </div>
+</div>

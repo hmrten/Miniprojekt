@@ -39,7 +39,14 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script>
+        window.MiniProj = {};
+        MiniProj.rootPath = '@Url.Content("~")';
+    </script>
+    @RenderSection("scripts", false)
 </body>
 </html>
