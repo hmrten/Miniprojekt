@@ -16,3 +16,7 @@ textarea {
     max-width: 280px;
 }
 
+.star {
+    color: red;
+    font-weight: bold;
+}

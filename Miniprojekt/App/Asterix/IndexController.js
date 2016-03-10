@@ -13,25 +13,26 @@
             var r = Math.floor(Math.random() * rawTexts.length);
             var s = rawTexts[r];
 
-            var str = '';
             var dispText = '';
             var puncts = [];
 
             for (var i = 0; i < s.length; ++i) {
                 if (isPunct(s[i])) {
-                    str += s[i] + ' is punctuation @ index: ' + i + '<br />';
                     //dispText += '*';
                     dispText += '<span class="star">*</span>';
-                    puncts.push(i);
+                    puncts.push({ index: i, punct: s[i] });
                 } else {
                     dispText += s[i];
                 }
             }
-            $scope.str = str;
+
+            dispText = dispText.replace(/\n/g, '<br />');
 
             $scope.rawText = s;
             $scope.dispText = dispText;
             $scope.puncts = puncts;
+            $scope.userScore = 0;
+            $scope.totalScore = puncts.length;
         };
 
         function getData() {
@@ -48,14 +49,36 @@
         getData();
 
         $scope.play = function () {
-            var s1 = $scope.inputText;
-            var s2 = $scope.rawText;
+            var actual = $scope.inputText;
+            var expected = $scope.rawText;
+            var puncts = $scope.puncts;
+            var score = 0;
 
-            if (s1 == s2) {
-                $scope.msg = 'CORRECT !';
-            } else {
-                $scope.msg = 'WRONG';
+            for (var i = 0; i < puncts.length; ++i) {
+                var pi = puncts[i].index;
+                var pp = puncts[i].punct;
+
+                if (actual[pi] == pp)
+                    ++score;
             }
+
+            if (score == 0) {
+                $scope.panelType = 'danger';
+            } else if (score == $scope.totalScore) {
+                $scope.panelType = 'success';
+            } else {
+                $scope.panelType = 'warning';
+            }
+
+            $scope.userScore = score;
+
+            if (actual == expected) {
+                $scope.panelHeading = 'RÄTT';
+                $scope.panelText = '';
+            } else {
+                $scope.panelHeading = 'FEL';
+            }
+            $scope.panelText = expected.replace(/\n/g, '<br />');
         };
     });
 
