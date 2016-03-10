@@ -893,6 +893,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\GameColor\CSS_knapptest.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\version.json" />
@@ -921,7 +922,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Color\GissaFarg.cshtml" />
+    <Content Include="Views\GameColor\GissaFarg.cshtml" />
     <Content Include="Views\GameImage\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">

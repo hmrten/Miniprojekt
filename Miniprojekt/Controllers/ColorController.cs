@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Miniprojekt.DataAccess
 {
-    public class ColorController : Controller
+    public class GameColorController : Controller
     {
         // GET: Color
         public ActionResult Index()
