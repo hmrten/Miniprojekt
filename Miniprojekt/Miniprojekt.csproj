@@ -900,7 +900,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ColorController.cs" />
+    <Compile Include="Controllers\GameAsterixController.cs" />
     <Compile Include="Controllers\GameImageController.cs" />
+    <Compile Include="Controllers\GamePoetryController.cs" />
+    <Compile Include="Controllers\GameQuestionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\MpContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -925,6 +928,10 @@
     <Content Include="Views\GissaFarg.cshtml" />
     <Content Include="Views\GameImage\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Color\Index.cshtml" />
+    <Content Include="Views\GameAsterix\Index.cshtml" />
+    <Content Include="Views\GamePoetry\Index.cshtml" />
+    <Content Include="Views\GameQuestions\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -934,7 +941,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Color\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603091218032_initial.resx">

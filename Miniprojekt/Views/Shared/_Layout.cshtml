@@ -17,11 +17,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Startsida", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Gissa Bilden", "", "")</li>
+                    <li>@Html.ActionLink("Gissa bilden", "Index", "GameImage")</li>
+                    <li>@Html.ActionLink("Skiljetecken", "Index", "GameAsterix")</li>
+                    <li>@Html.ActionLink("Vilken färg?", "Index", "GameColor")</li>
+                    <li>@Html.ActionLink("Bygga meningar av ord", "Index", "GamePoetry")</li>
+                    <li>@Html.ActionLink("Frågesport", "Index", "GameQuestions")</li>
                 </ul>
             </div>
         </div>
