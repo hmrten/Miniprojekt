@@ -1,7 +1,20 @@
-﻿@model Miniprojekt.Models.Result
+﻿@model Miniprojekt.ViewModels.ImageViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Gissa bilden";
 }
 
-<h2>Index</h2>
+<h2>Gissa bilden</h2>
+<p>Vad ser du på bilden? Skriv rätt svar i rutan under bilden.</p>
+
+<div class="game-holder" ng-controller="GameImageController">
+    <div class="game-image-holder">
+        <img src="@Model.ImageList[0].imageUrl" alt="bild1" />
+    </div>
+    <input type="text" />
+</div>
+   
+
+<p>
+    @Model.ImageList[0].imageWord
+</p>
