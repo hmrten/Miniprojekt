@@ -17,7 +17,7 @@ namespace Miniprojekt.Controllers
         {
             string[] s = {
                              "Hej!\nVad heter du?\nJag heter Kalle.",
-                             //"Hur gammal är du?"
+                             "Hur gammal är du?"
                          };
             return Json(s, JsonRequestBehavior.AllowGet);
         }

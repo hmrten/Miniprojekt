@@ -15,18 +15,18 @@
 
         <div class="panel panel-info">
             <div class="panel-body">
-                <p data-ng-bind-html="dispText"></p>
+                <p data-ng-bind-html="curProblem.dispText"></p>
             </div>
         </div>
 
         <div class="panel panel-{{ panelType }}" data-ng-show="panelHeading">
-            <div class="panel-heading"><strong>{{ panelHeading }}</strong> - Du fick {{ userScore }} / {{ totalScore }} poäng.</div>
+            <div class="panel-heading"><strong>{{ panelHeading }}</strong> - Du fick {{ userScore }} / {{ expectedScore }} poäng.</div>
             <div class="panel-body">
                 <p data-ng-bind-html="panelText"></p>
             </div>
         </div>
 
-        <form data-ng-submit="play()" data-ng-hide="showReg">
+        <form data-ng-submit="play()" data-ng-show="showPlay">
             <div class="input-group">
                 <textarea class="form-control" name="inputText" style="min-width: 500px" data-ng-model="inputText"></textarea>
             </div>
@@ -34,6 +34,8 @@
                 <button class="btn btn-primary" type="submit">Rätta</button>
             </div>
         </form>
+
+        <button class="btn btn-primary" data-ng-show="!showPlay && !alertMsg" data-ng-click="nextProblem()">Nästa</button>
 
         <div data-ng-show="showReg">
             <div class="alert alert-{{alertType}}" data-ng-show="alertMsg">
