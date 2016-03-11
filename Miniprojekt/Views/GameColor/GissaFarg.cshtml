@@ -24,7 +24,11 @@
             property4.style.backgroundColor = colorArray[n];
             property3.style.backgroundColor = colorArray[n+1];
             property2.style.backgroundColor = colorArray[n+2];
-            property1.style.backgroundColor = colorArray[n+3];
+            property1.style.backgroundColor = colorArray[n + 3];
+            property4.style.color = colorArray[n];
+            property3.style.color = colorArray[n + 1];
+            property2.style.color = colorArray[n + 2];
+            property1.style.color = colorArray[n + 3];
             points = points + 1;
             n = n + 4;
             i = i + 1;
@@ -36,6 +40,7 @@
             
             var property = document.getElementById(buttonNr);
             property.style.backgroundColor = "#FFFFFF"
+            property.style.color = "#000000";
         }
         
     }
@@ -90,35 +95,15 @@
             width: 150px;
             vertical-align: middle;
         }
-        button.button0:hover {
-            /*background-color: #ccc;*/
-            color: white;
-        }
 
-        button.button1:hover {
-            /*background-color: #ccc;*/
-            color: white;
-        }
-
-        button.button2:hover {
-            /*background-color: #ccc;*/
-            color: white;
-        }
-
-        button.button3:hover {
-            /*background-color: #ccc;*/
-            color: white;
-        }
-        button:hover{
-            color: white;
-        }
     </style>
 </div>
 
 <div ng-app="Myapp" ng-controller="MyController">
     <center>
-        <h2>Gul</h2>
-        <p id="ShowColor">gul</p>
+        <h2>
+            <p id="ShowColor">gul</p>
+        </h2>
     </center>
     <div class="bodytable">
         <center>
@@ -127,18 +112,18 @@
                 <table>
                     <tr>
                         <th>
-                            <button type="button" class="button0" name="1" id ="1" onclick="clicked(1)">1</button>
+                            <button type="button" class="button0" name="1" id ="1" onclick="clicked(1)">fel</button>
                         </th>
                         <th>
-                            <button type="button" class="button1" name="2" id="2" onclick="clicked(2)">2</button>
+                            <button type="button" class="button1" name="2" id="2" onclick="clicked(2)">fel</button>
                         </th>
                     </tr>
                     <tr>
                         <th>
-                            <button type="button" class="button2" name="3" id="3" onclick="clicked(3)">3</button>
+                            <button type="button" class="button2" name="3" id="3" onclick="clicked(3)">fel</button>
                         </th>
                             <th>
-                                <button type="button" class="button3" name="4" id="4" onclick="clicked(4)">4</button>
+                                <button type="button" class="button3" name="4" id="4" onclick="clicked(4)">fel</button>
                            </th>
                     </tr>
                 </table>
