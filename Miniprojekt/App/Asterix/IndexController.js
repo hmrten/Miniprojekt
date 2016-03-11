@@ -46,7 +46,13 @@
                 });
         };
 
-        getData();
+        function init() {
+            getData();
+            $scope.showReg = false;
+            $scope.game_id = 2;
+        };
+
+        init();
 
         $scope.play = function () {
             var actual = $scope.inputText;
@@ -71,14 +77,22 @@
             }
 
             $scope.userScore = score;
+            $scope.panelText = '<strong>Du skrev:</strong><br />' + actual.replace(/\n/g, '<br />') +
+                '<hr /><strong>Rätt svar var:</strong><br />' + expected.replace(/\n/g, '<br />');
+            $scope.panelHeading = actual == expected ? 'RÄTT' : 'FEL';
+            $scope.showReg = true;
+        };
 
-            if (actual == expected) {
-                $scope.panelHeading = 'RÄTT';
-                $scope.panelText = '';
-            } else {
-                $scope.panelHeading = 'FEL';
-            }
-            $scope.panelText = expected.replace(/\n/g, '<br />');
+        $scope.registerScore = function () {
+            var data = { nickname: $scope.nickname, score: $scope.userScore, game_id: $scope.game_id };
+            $http.post(MiniProj.rootPath + 'Score/Register', data).then(function (resp) {
+                $scope.alertType = 'success';
+                $scope.alertMsg = 'Successfully registered: ' + data;
+            },
+            function (resp) {
+                $scope.alertType = 'danger';
+                $scope.alertMsg = 'could not register score';
+            });
         };
     });
 

@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\Asterix\IndexController.js" />
+    <Content Include="App\Score\IndexController.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -906,6 +907,7 @@
     <Compile Include="Controllers\GamePoetryController.cs" />
     <Compile Include="Controllers\GameQuestionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ScoreController.cs" />
     <Compile Include="DataAccess\MpContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -934,6 +936,7 @@
     <Content Include="Views\GameAsterix\Index.cshtml" />
     <Content Include="Views\GamePoetry\Index.cshtml" />
     <Content Include="Views\GameQuestions\Index.cshtml" />
+    <Content Include="Views\Score\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
