@@ -8,7 +8,7 @@ namespace Miniprojekt.DataAccess
 {
     public class GameColorController : Controller
     {
-        private int points = 0;
+
         // GET: Color
         public ActionResult Index()
         {
