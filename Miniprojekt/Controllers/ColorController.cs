@@ -9,12 +9,6 @@ namespace Miniprojekt.DataAccess
     public class GameColorController : Controller
     {
 
-        // GET: Color
-        public ActionResult Index()
-        {
-            return View();
-        }
-        [HttpGet]
         public ActionResult GissaFarg()
         {
             return View();

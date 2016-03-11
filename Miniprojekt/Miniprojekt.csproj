@@ -143,7 +143,6 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\GameColorAngular.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -932,7 +931,6 @@
     <Content Include="Views\GameColor\GissaFarg.cshtml" />
     <Content Include="Views\GameImage\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\GameAsterix\Index.cshtml" />
     <Content Include="Views\GamePoetry\Index.cshtml" />
     <Content Include="Views\GameQuestions\Index.cshtml" />
