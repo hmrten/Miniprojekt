@@ -88,6 +88,7 @@
   <ItemGroup>
     <Content Include="App\Asterix\IndexController.js" />
     <Content Include="App\Score\IndexController.js" />
+    <Content Include="App\Image\IndexController.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

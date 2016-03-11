@@ -20,3 +20,36 @@ textarea {
     color: red;
     font-weight: bold;
 }
+.clear {clear:both;}
+/** GAME IMAGE **/
+.game-holder {
+    position:relative;
+    max-width:330px;
+}
+.game-image-holder {
+    position:relative;
+    margin-bottom:20px;
+}
+.game-holder .input-lg {
+    font-size:25px;
+    text-transform:uppercase;
+}
+.game-input-holder {
+    position:relative;
+    margin-bottom:20px;
+}
+.game-image-holder {
+    position:relative;
+}
+.game-image-result {
+    position:relative;
+}
+.game-btn-holder {
+    position:relative;
+    float:right;
+}
+.page-counter-holder {
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+}

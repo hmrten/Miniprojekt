@@ -4,17 +4,31 @@
     ViewBag.Title = "Gissa bilden";
 }
 
+@section scripts {
+    <script src="~/App/Image/IndexController.js"></script>
+}
+@*@Model.ImageList[0].imageUrl*@
+
 <h2>Gissa bilden</h2>
 <p>Vad ser du på bilden? Skriv rätt svar i rutan under bilden.</p>
 
-<div class="game-holder" ng-controller="GameImageController">
+<div class="game-holder" data-ng-app="image" data-ng-controller="IndexController">
     <div class="game-image-holder">
-        <img src="@Model.ImageList[0].imageUrl" alt="bild1" />
+        <img src="{{currentImageWord.imageUrl}}" alt="bild1" />
     </div>
-    <input type="text" />
+    <div class="game-input-holder">
+        <input class="input-lg game-image-input" type="text" ng-model="inputText"/>
+        <button class="btn btn-default" ng-click="validateText('{{currentImageWord.imageWord}}')">OK</button>
+    </div>
+    <div class="game-image-result">
+        <div class="alert alert-success" ng-hide="correct">Rätt svar, du får 1 poäng!</div>
+        <div class="alert alert-danger" ng-hide="fail">Fel, svaret är {{currentImageWord.imageWord}}</div>
+        <div class="game-btn-holder" ng-hide="next">
+            <div class="">Din poäng: {{result}}</div>
+            <button class="btn btn-default btn-next">Nästa bild &raquo;</button>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <div class="page-counter-holder">Bild {{questionNumber}} av {{totalNumberOfQuestions()}}</div>
+    <div class="clear">&nbsp;</div>
 </div>
-   
-
-<p>
-    @Model.ImageList[0].imageWord
-</p>
