@@ -9,7 +9,7 @@
 }
 
 <div data-ng-app="asterix" data-ng-controller="IndexController">
-    <div class="col-sm-12">
+    <div class="game-holder">
         <h2>Asterixspelet</h2>
         <h4>Skriv av texten och sätt in rätt skiljetecken där en asterisk (*) finns markerad.</h4>
 
@@ -28,7 +28,7 @@
 
         <form data-ng-submit="play()" data-ng-show="showPlay">
             <div class="input-group">
-                <textarea class="form-control" name="inputText" style="min-width: 500px" data-ng-model="inputText"></textarea>
+                <textarea class="form-control asterix-input" name="inputText" data-ng-model="inputText"></textarea>
             </div>
             <div class="input-group">
                 <button class="btn btn-primary" type="submit">Rätta</button>

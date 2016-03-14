@@ -68,3 +68,9 @@ textarea {
     padding:10px;
     font-size:18px;
 }
+.asterix-input {
+    min-width:330px;
+}
+.input-group {
+    margin-bottom:20px;
+}
