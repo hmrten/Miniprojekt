@@ -17,7 +17,7 @@
                     $scope.alertType = 'danger';
                     $scope.alertMsg = 'could not register score';
                 });
-                
+
             };
         });
     </script>
@@ -82,31 +82,35 @@
             gul
         </h2>
     </center>
-    
+
     <div class="bodytable">
         <center>
-            @using (Html.BeginForm())
-            {
-                <table>
-                    <tr>
-                        <th>
-                            <button type="button" class="button0" name="1" id="1" onclick="clicked(1)">fel</button>
-                        </th>
-                        <th>
-                            <button type="button" class="button1" name="2" id="2" onclick="clicked(2)">fel</button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button type="button" class="button2" name="3" id="3" onclick="clicked(3)">fel</button>
-                        </th>
-                        <th>
-                            <button type="button" class="button3" name="4" id="4" onclick="clicked(4)">fel</button>
-                        </th>
-                    </tr>
-                </table>
-            }
+            <div id="gamePanel">
+                @using (Html.BeginForm())
+                {
+                    <table>
+                        <tr>
+                            <th>
+                                <button type="button" class="button0" name="1" id="1" onclick="clicked(1)">fel</button>
+                            </th>
+                            <th>
+                                <button type="button" class="button1" name="2" id="2" onclick="clicked(2)">fel</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <button type="button" class="button2" name="3" id="3" onclick="clicked(3)">fel</button>
+                            </th>
+                            <th>
+                                <button type="button" class="button3" name="4" id="4" onclick="clicked(4)">fel</button>
+                            </th>
+                        </tr>
+                    </table>
+                }
+            </div>
+            <div id="answer">Rätt svar är<div id="colorBox" style="width: 50px; height: 50px"></div></div>
             <div ng-app="GissaFarg" ng-controller="GissaFargController" id="showForm">
+                <p>Poäng: <span id="points"></span></p>
                 <form class="form-inline" data-ng-submit="registerScore()">
                     <div class="form-group">
                         <div class="input-group">
@@ -125,19 +129,23 @@
 <script>
 
     var rightbutton = [4, 1, 2];
-    var rightcolor = ["gul", "rosa", "röd","Slutspelat"]
+    var rightcolor = ["gul", "rosa", "röd", "Slutspelat"]
     var points = 0;
     var i = 0;
     var n = 0;
     var colorArray = ["#003300", "#0f3600", "#333300", "#FF3399", "#ffff00", "#bfff00", "#ff0000", "#00ffbf"];
     var showform = document.getElementById("showForm");
     showform.style.visibility = "hidden";
+
+    document.getElementById("answer").style.visibility = "hidden";
     function clicked(buttonNr) {
         console.log("rightbutton " + rightbutton[i] + "\nbuttonNr " + buttonNr + "\nn " + n + " i " + i + "\npoints " + points);
         var property4 = document.getElementById(4);
         var property3 = document.getElementById(3);
         var property2 = document.getElementById(2);
         var property1 = document.getElementById(1);
+
+        document.getElementById("answer").style.visibility = "hidden";
 
         if (buttonNr == rightbutton[i]) {
 
@@ -154,12 +162,21 @@
             i = i + 1;
             if (i == 3) {
                 showform.style.visibility = "visible";
+                document.getElementById("gamePanel").style.visibility = "hidden";
+                document.getElementById("points").innerHTML = points;
             }
             document.getElementById("ShowColor").innerHTML = rightcolor[i];
         }
         else {
-
+            points = points - 1;
             var property = document.getElementById(buttonNr);
+            document.getElementById("answer").style.visibility = "visible";
+            if (i == 0) {
+                document.getElementById('colorBox').style.backgroundColor = '#ffd800';
+            } else {
+                document.getElementById('colorBox').style.backgroundColor = document.getElementById(rightbutton[i]).style.backgroundColor;
+            }
+
             property.style.backgroundColor = "#FFFFFF"
             property.style.color = "#000000";
         }

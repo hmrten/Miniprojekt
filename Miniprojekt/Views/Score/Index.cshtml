@@ -10,10 +10,10 @@
 
 <div data-ng-app="score" data-ng-controller="IndexController">
     <div class="col-sm-12">
-        <h2>Index</h2>
+        <h2>Topplista</h2>
         <h4>{{ alertMsg }}</h4>
         <div class="input-group">
-            <label for="selectedGame" class="input-group-addon">Topplista för spel:</label>
+            <label for="selectedGame" class="input-group-addon">Spel:</label>
             <select class="form-control" name="selectedGame" data-ng-model="selectedGame">
                 <option value="-1">Alla</option>
                 <option data-ng-repeat="g in games" value="{{ g.id }}">{{ g.name }}</option>
@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="r in results | filter:filterResults | orderBy:'-score' | orderBy:'-id' | limitTo:10">
+                <tr data-ng-repeat="r in results | filter:filterResults | orderBy:'-id' | orderBy:'-score' | limitTo:10">
                     <td>{{ r.game_name }}</td>
                     <td>{{ r.user_nickname }}</td>
                     <td>{{ r.score }}</td>

@@ -115,6 +115,7 @@
             $http.post(MiniProj.rootPath + 'Score/Register', data).then(function (resp) {
                 $scope.alertType = 'success';
                 $scope.alertMsg = 'Successfully registered: ' + data;
+                window.location = MiniProj.rootPath + 'Score/';
             },
             function (resp) {
                 $scope.alertType = 'danger';
