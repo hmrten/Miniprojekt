@@ -1,7 +1,7 @@
 ﻿(function () {
     var app = angular.module('image', []);
 
-    app.controller('IndexController', function ($scope) {
+    app.controller('IndexController', function ($scope, $http) {
 
 
         var imageWordList = [
@@ -12,15 +12,17 @@
             { imageUrl: "/Content/Images/Games/bild5.jpg", imageWord: "HUS" },
             { imageUrl: "/Content/Images/Games/bild6.jpg", imageWord: "ANKA" },
             { imageUrl: "/Content/Images/Games/bild7.jpg", imageWord: "FÅR" },
-            { imageUrl: "/Content/Images/Games/bild8.jpg", imageWord: "NYCKELPIGA" },
+            { imageUrl: "/Content/Images/Games/bild8.png", imageWord: "NYCKELPIGA" },
             { imageUrl: "/Content/Images/Games/bild9.jpg", imageWord: "GLASÖGON" },
             { imageUrl: "/Content/Images/Games/bild10.jpg", imageWord: "STOL" }];
 
         $scope.setCurrentImageWord = function (questionNumber) {
-            if (questionNumber == imageWordList.length) {
-
+            if (questionNumber > imageWordList.length) {
+                $scope.isPlaying = false;
+            } else {
+                $scope.currentImageWord = imageWordList[questionNumber - 1];
             }
-            $scope.currentImageWord = imageWordList[questionNumber - 1];
+            
         }
 
         $scope.validateText = function (word) {
@@ -60,6 +62,7 @@
             $scope.questionNumber = 1;
             $scope.setCurrentImageWord($scope.questionNumber);
             $scope.gotPoints = false;
+            $scope.isPlaying = true;
         }
 
         $scope.totalNumberOfQuestions = function () {
@@ -72,6 +75,18 @@
 
         $scope.initApp()
 
+        $scope.registerScore = function () {
+            var data = { nickname: $scope.nickname, score: $scope.result, game_id: 1 };
+            $http.post(MiniProj.rootPath + 'Score/Register', data).then(function (resp) {
+                //$scope.alertType = 'success';
+                //$scope.alertMsg = 'Successfully registered: ' + data;
+                window.location = MiniProj.rootPath + 'Score/';
+            },
+            function (resp) {
+                $scope.alertType = 'danger';
+                $scope.alertMsg = 'could not register score';
+            });
+        };
     });
 
 }());

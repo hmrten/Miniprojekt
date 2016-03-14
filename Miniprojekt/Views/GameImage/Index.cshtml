@@ -13,22 +13,42 @@
 <p>Vad ser du på bilden? Skriv rätt svar i rutan under bilden.</p>
 
 <div class="game-holder" data-ng-app="image" data-ng-controller="IndexController">
-    <div class="game-image-holder" ng-if="currentImageWord.imageUrl">
-        <img src="{{currentImageWord.imageUrl}}" alt="bild" />
-    </div>
-    <div class="game-input-holder">
-        <input class="input-lg game-image-input" type="text" ng-model="inputText"/>
-        <button class="btn btn-default" ng-click="validateText()">OK</button>
-    </div>
-    <div class="game-image-result">
-        <div class="alert alert-success" ng-hide="correct">Rätt svar, du får 1 poäng!</div>
-        <div class="alert alert-danger" ng-hide="fail">Fel, svaret är {{currentImageWord.imageWord}}</div>
-        <div class="game-btn-holder" ng-hide="next">
-            <div class="">Din poäng: {{result}}</div>
-            <button class="btn btn-default btn-next" ng-click="nextImage()">Nästa bild &raquo;</button>
+    <div data-ng-show="isPlaying">
+        <div class="game-image-holder" ng-if="currentImageWord.imageUrl">
+            <img src="{{currentImageWord.imageUrl}}" alt="bild" />
         </div>
+        <div class="game-input-holder">
+            <input class="input-lg game-image-input" type="text" ng-model="inputText"/>
+            <button class="btn btn-default" ng-click="validateText()">OK</button>
+        </div>
+        <div class="game-image-result">
+            <div class="alert alert-success" ng-hide="correct">Rätt svar, du får 1 poäng!</div>
+            <div class="alert alert-danger" ng-hide="fail">Fel, svaret är {{currentImageWord.imageWord}}</div>
+            <div class="game-btn-holder" ng-hide="next">
+                <div class="">Din poäng: {{result}}</div>
+                <button class="btn btn-default btn-next" ng-click="nextImage()">Nästa &raquo;</button>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+        <div class="page-counter-holder">Bild {{questionNumber}} av {{totalNumberOfQuestions()}}</div>
         <div class="clear">&nbsp;</div>
     </div>
-    <div class="page-counter-holder">Bild {{questionNumber}} av {{totalNumberOfQuestions()}}</div>
-    <div class="clear">&nbsp;</div>
+    <div data-ng-show="!isPlaying">
+        @*<div class="alert alert-{{alertType}}" data-ng-show="alertMsg">
+            <strong>{{ alertMsg }}</strong>
+        </div>*@
+        <div class="panel panel-info">Din poäng: {{result}}</div>
+        <form class="form-inline" data-ng-hide="alertType == 'success'" data-ng-submit="registerScore()">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Smeknamn:</span>
+                    <input class="form-control" type="text" name="nickname" data-ng-model="nickname" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Registrera</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
