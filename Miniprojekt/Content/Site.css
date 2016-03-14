@@ -13,7 +13,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 255px;
 }
 
 .star {
@@ -41,15 +41,30 @@ textarea {
 .game-image-holder {
     position:relative;
 }
+
 .game-image-result {
     position:relative;
 }
 .game-btn-holder {
     position:relative;
-    float:right;
 }
 .page-counter-holder {
     text-align:center;
     font-weight:bold;
+    font-size:18px;
+    padding:10px;
+}
+.btn-next {
+    position:relative;
+    float:right;
+}
+.total-score {
+    position:relative;
+    float:left;
+    font-size:18px;
+}
+.game-result-info {
+    font-weight:bold;
+    padding:10px;
     font-size:18px;
 }

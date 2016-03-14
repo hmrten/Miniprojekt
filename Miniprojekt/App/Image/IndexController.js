@@ -43,6 +43,7 @@
             }
             $scope.result += point;
             $scope.gotPoints = true;
+            $scope.next = false;
         }
 
         $scope.nextImage = function () {
@@ -52,12 +53,14 @@
             $scope.gotPoints = false;
             $scope.correct = true;
             $scope.fail = true;
+            $scope.next = true;
 
         }
 
         $scope.initApp = function () {
             $scope.correct = true;
             $scope.fail = true;
+            $scope.next = true;
             $scope.result = 0;
             $scope.questionNumber = 1;
             $scope.setCurrentImageWord($scope.questionNumber);
