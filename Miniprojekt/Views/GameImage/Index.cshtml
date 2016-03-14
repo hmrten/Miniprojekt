@@ -13,19 +13,19 @@
 <p>Vad ser du på bilden? Skriv rätt svar i rutan under bilden.</p>
 
 <div class="game-holder" data-ng-app="image" data-ng-controller="IndexController">
-    <div class="game-image-holder">
-        <img src="{{currentImageWord.imageUrl}}" alt="bild1" />
+    <div class="game-image-holder" ng-if="currentImageWord.imageUrl">
+        <img src="{{currentImageWord.imageUrl}}" alt="bild" />
     </div>
     <div class="game-input-holder">
         <input class="input-lg game-image-input" type="text" ng-model="inputText"/>
-        <button class="btn btn-default" ng-click="validateText('{{currentImageWord.imageWord}}')">OK</button>
+        <button class="btn btn-default" ng-click="validateText()">OK</button>
     </div>
     <div class="game-image-result">
         <div class="alert alert-success" ng-hide="correct">Rätt svar, du får 1 poäng!</div>
         <div class="alert alert-danger" ng-hide="fail">Fel, svaret är {{currentImageWord.imageWord}}</div>
         <div class="game-btn-holder" ng-hide="next">
             <div class="">Din poäng: {{result}}</div>
-            <button class="btn btn-default btn-next">Nästa bild &raquo;</button>
+            <button class="btn btn-default btn-next" ng-click="nextImage()">Nästa bild &raquo;</button>
         </div>
         <div class="clear">&nbsp;</div>
     </div>

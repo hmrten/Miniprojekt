@@ -20,7 +20,6 @@
             if (questionNumber == imageWordList.length) {
 
             }
-
             $scope.currentImageWord = imageWordList[questionNumber - 1];
         }
 
